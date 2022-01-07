@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg alert alert-primary">
+    <a class="navbar-brand" href="">KALİ AKADEMİ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home">Ders Seç</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="egitimkadrosu">Kadro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kayitlar">Kayıtlar</a>
+        </li>
+        <li class="nav-item" style="margin-left: 1250px;">
+          <a class="nav-link" href="register" *ngIf="!servis.OturumKontrol()">Kayıt Ol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login" *ngIf="!servis.OturumKontrol()">Giriş Yap</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" href="admin" *ngIf="servis.OturumKontrol()">Admin Paneli</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" *ngIf="servis.OturumKontrol()" (click)="OturumKapat()">Çıkış Yap</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+  
+<router-outlet></router-outlet>
+
+<footer class="page-footer font-small blue">
+
+ 
+  <div class="footer-copyright text-center py-3 bg-alert alert-primary">© 2020 Copyright:
+    <a href="https://aykutyolcu.co/"> aykutyolcu.co</a>
+  </div>
+  
+
+</footer>
